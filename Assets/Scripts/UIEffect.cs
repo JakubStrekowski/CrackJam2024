@@ -16,8 +16,10 @@ public enum EUiEffect
 public class UIEffect : MonoBehaviour
 {
     [SerializeField] private EUiEffect effect;
+    [SerializeField] private float startDelay;
     [SerializeField] private float duration;
     [SerializeField] private Ease ease;
+    [SerializeField] private bool isEntranceOnly;
     [Space]
     [SerializeField] private Vector3 rotation;
     [SerializeField] private Vector3 scale;
@@ -28,6 +30,10 @@ public class UIEffect : MonoBehaviour
     private RectTransform _rect;
     private Image _renderer;
     
+    private Vector3 _startRotation;
+    private Vector3 _startScale;
+    private Vector3 _startPosition;
+    private Color _startColor;
     private void Awake()
     {
         _rect = GetComponent<RectTransform>();
@@ -36,6 +42,10 @@ public class UIEffect : MonoBehaviour
 
     public void Start()
     {
+        _startRotation = _rect.rotation.eulerAngles;
+        _startScale = _rect.localScale;
+        _startPosition = _rect.anchoredPosition;
+        _startColor = _renderer.color;
         _seq = DOTween.Sequence();
         EvaluateEffect();
     }
@@ -44,22 +54,41 @@ public class UIEffect : MonoBehaviour
     {
         if (effect.HasFlag(EUiEffect.Rotate))
         {
-            _seq.Insert(0, _rect.DORotate(rotation, duration).SetEase(ease));
+            _seq.Insert(startDelay, _rect.DORotate(rotation, duration).SetEase(ease));
+            if (!isEntranceOnly)
+            {
+                _seq.Insert(startDelay + duration, _rect.DORotate(_startRotation, duration).SetEase(ease));
+            }
         }
         if (effect.HasFlag(EUiEffect.Rescale))
         {
-            _seq.Insert(0, transform.DOScale(scale, duration).SetEase(ease));
+            _seq.Insert(startDelay, transform.DOScale(scale, duration).SetEase(ease));
+            if (!isEntranceOnly)
+            {
+                _seq.Insert(startDelay + duration, transform.DOScale(_startScale, duration).SetEase(ease));
+            }
         }
         if (effect.HasFlag(EUiEffect.Move))
         {
-            _seq.Insert(0, _rect.DOAnchorPos(position, duration).SetEase(ease));
+            _seq.Insert(startDelay, _rect.DOAnchorPos(position, duration).SetEase(ease));
+            if (!isEntranceOnly)
+            {
+                _seq.Insert(startDelay + duration, _rect.DOAnchorPos(_startPosition, duration).SetEase(ease));
+            }
         }
         if (effect.HasFlag(EUiEffect.Recolor))
         {
-            _seq.Insert(0,_renderer.DOColor(color, duration).SetEase(ease));
+            _seq.Insert(startDelay,_renderer.DOColor(color, duration).SetEase(ease));
+            if (!isEntranceOnly)
+            {
+                _seq.Insert(startDelay + duration,_renderer.DOColor(_startColor, duration).SetEase(ease));
+            }
         }
 
-        _seq.SetLoops(-1);
+        if (!isEntranceOnly)
+        {
+            _seq.SetLoops(-1);
+        }
         _seq.Play();
     }
 }
