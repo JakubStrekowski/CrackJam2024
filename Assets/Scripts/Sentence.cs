@@ -6,7 +6,7 @@ using UnityEngine;
 public class Sentence : ScriptableObject
 {
     [SerializeField] private string description;
-    [SerializeField] private SentenceAnswer[] answers = new SentenceAnswer[4];
+    [SerializeField] private SentenceAnswer[] answers;
 
     public string GetDescription()
     {

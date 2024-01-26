@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e513beaa93330c441907f5de8fd39c40, type: 3}
   m_Name: Test sentence 1
   m_EditorClassIdentifier: 
-  description: TEST 1
+  description: TEST 2
   answers:
   - answer: god
     points: 1
@@ -20,5 +20,3 @@ MonoBehaviour:
     points: -1
   - answer: better
     points: 5
-  - answer: n
-    points: 0

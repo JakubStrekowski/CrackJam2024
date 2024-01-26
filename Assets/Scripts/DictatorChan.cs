@@ -36,4 +36,12 @@ public class DictatorChan : ScriptableObject
         }
         return null;
     }
+    public string GetDictatorName()
+    {
+        return dictatorName;
+    }
+    public string GetDictatorDescription()
+    {
+        return dictatorDescription;
+    }
 }
