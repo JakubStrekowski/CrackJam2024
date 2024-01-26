@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aa6063059039024f9b6e970d5868b0e, type: 3}
+  m_Name: TestDictator
+  m_EditorClassIdentifier: 
+  dictatorName: TESTOWA CHAN
+  dictatorDescription: Lubi wykrzaczac unity
+  sentencesReference:
+  - {fileID: 11400000, guid: fc53c147b21db2744b2d8bbde49cabe7, type: 2}
+  - {fileID: 11400000, guid: b803321b70ce848419c50e462aff8267, type: 2}
