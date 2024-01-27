@@ -9,7 +9,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GlobalSettings globalSettings;
     [SerializeField] private DictatorChan[] dictators;
     int currentDictator = 0;
-    int lovePoints = 0;
+    int lovePoints = 2;
+    int winCap = 10;
     Sentence currentSentence;
 
     [Header("Panels")]
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI dictatorName;
     [SerializeField] private TextMeshProUGUI question;
     [SerializeField] private Button[] dialogButtons;
+    [SerializeField] private float estimatedTimeToWriteOut = 5.0f;
 
     private void Start()
     {
@@ -48,6 +50,8 @@ public class GameManager : MonoBehaviour
         Debug.Log(id);
         id = Mathf.Clamp(id, 0, currentSentence.GetAnswersCount()-1);
         lovePoints += currentSentence.GetSentence(id).GetAnswetValue();
+        if (lovePoints >= winCap) EndGame(MeetingResult.Good);
+        else if (lovePoints <= 0) EndGame(MeetingResult.Bad);
         LoadDialog();
     }
 
@@ -63,6 +67,8 @@ public class GameManager : MonoBehaviour
 
         currentSentence = dictators[currentDictator].GetNextSentence();
         question.SetText(currentSentence.GetDescription());
+        StopAllCoroutines();
+        StartCoroutine(WriteoutSentence(currentSentence.GetDescription(), question));
         for (int i = 0; i < dialogButtons.Length && i< currentSentence.GetAnswersCount(); i++)
         {
             //update buttons decriptions
@@ -100,6 +106,18 @@ public class GameManager : MonoBehaviour
                 break;
             default:
                 break;
+        }
+    }
+
+    private IEnumerator WriteoutSentence(string sentence, TextMeshProUGUI output)
+    {
+        var waitTime = new WaitForSeconds(estimatedTimeToWriteOut/sentence.Length);
+        output.text = "";
+        for (int i=0; i<sentence.Length;i++) 
+        {
+            output.text += sentence[i];
+            yield return waitTime;
+            if (sentence[i] == ',' || sentence[i] == ',') yield return waitTime;
         }
     }
 }
