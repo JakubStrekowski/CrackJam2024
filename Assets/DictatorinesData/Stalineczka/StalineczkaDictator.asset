@@ -22,6 +22,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5e22d5b55c2369e40bc7a9e957a2d522, type: 2}
   - {fileID: 11400000, guid: 4ef2175d93fb868459b540fc111f28d2, type: 2}
   - {fileID: 11400000, guid: 758bdfec84bc3c347b02ed718a70c1fe, type: 2}
+  - {fileID: 11400000, guid: c70ad7a8aede84e4ebfe38f02241f0ec, type: 2}
   skinStates:
   - {fileID: 21300000, guid: ab8297fc2c151b94bb7fc924407e08d7, type: 3}
   stalineczkaNeutral:
@@ -38,3 +39,5 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7a70a5dbc75c098418ad7be86d298794, type: 3}
   stalineczkaAnimState: 1
   stalineczkaSpriteId: 2
+  successSkin: []
+  successSkinId: 0
