@@ -13,6 +13,11 @@ public class Sentence : ScriptableObject
         return description;
     }
 
+    public SentenceAnswer[] GetAnswers()
+    {
+        return answers;
+    }
+
     public SentenceAnswer GetSentence(int id)
     {
         if (id < answers.Length)

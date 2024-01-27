@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -55,6 +56,7 @@ public class GameManager : MonoBehaviour
 
         HideButtons(false);
         LoadNewDictator(globalSettings.choosenWaifu);
+        winCap = lovePoints + dictators[currentDictator].GetTotalScore() - 1;
     }
 
     void HideButtons(bool hide)
@@ -87,11 +89,24 @@ public class GameManager : MonoBehaviour
             sadParticles.Play();
         }
 
+        CalculateSpriteState(lovePoints);
+
         if (lovePoints >= winCap) EndGame(MeetingResult.Good);
         else if (lovePoints <= 0) EndGame(MeetingResult.Bad);
         LoadDialog();
     }
 
+    private void CalculateSpriteState(int currentPoints)
+    {
+        float thresholdValue = dictators[currentDictator].GetTotalScore() /
+                               (float)dictators[currentDictator].GetSkinCount();
+
+        int selectedIndex = Mathf.FloorToInt((float)currentPoints / thresholdValue);
+        selectedIndex = Math.Clamp(selectedIndex, 0, dictators[currentDictator].GetSkinCount() - 1);
+
+        dictatorRepresentation.sprite = dictators[currentDictator].skinStates[selectedIndex];
+    }
+    
     [ContextMenu("LoadDialog")]
     public void LoadDialog()
     {

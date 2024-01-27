@@ -15,6 +15,8 @@ public class DictatorChan : ScriptableObject
     [Space]
     [SerializeField] private Sentence[] sentencesReference;
 
+    public Sprite[] skinStates;
+
     private List<Sentence> sentencesBuffer = new List<Sentence>();
 
     public void PrepreDictator()
@@ -23,6 +25,17 @@ public class DictatorChan : ScriptableObject
         sentencesBuffer = new List<Sentence>(sentencesReference);
 
     }
+
+    public int GetTotalScore()
+    {
+        return sentencesReference.Length;
+    }
+
+    public int GetSkinCount()
+    {
+        return skinStates.Length;
+    }
+    
     public bool IsMoreSentences()
     {
         return sentencesBuffer.Count > 0;
