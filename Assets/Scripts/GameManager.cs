@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private Image dictatorRepresentation; 
+    [SerializeField] private Image backgroundRepresentation; 
     [SerializeField] private GlobalSettings globalSettings;
     [SerializeField] private DictatorChan[] dictators;
     int currentDictator = 0;

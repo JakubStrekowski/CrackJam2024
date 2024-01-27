@@ -1077,7 +1077,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -36.199997}
+  m_AnchoredPosition: {x: 0, y: -36.19998}
   m_SizeDelta: {x: 796, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &765837103
@@ -1445,6 +1445,7 @@ GameObject:
   - component: {fileID: 1136554939}
   - component: {fileID: 1136554941}
   - component: {fileID: 1136554940}
+  - component: {fileID: 1136554942}
   m_Layer: 5
   m_Name: Dictator
   m_TagString: Untagged
@@ -1510,6 +1511,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1136554938}
   m_CullTransparentMesh: 1
+--- !u!114 &1136554942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136554938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcc2d16365d6a2842a67d9a32be52875, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScale: {x: 1.01, y: 1.025, z: 1}
+  duration: 2.4
+  ease: 6
 --- !u!1 &1139306950
 GameObject:
   m_ObjectHideFlags: 0
@@ -6876,6 +6892,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d36958306cb81e4b8bd70ee2ffa8c90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dictatorRepresentation: {fileID: 1136554940}
+  backgroundRepresentation: {fileID: 1139306952}
   globalSettings: {fileID: 11400000, guid: 56791315ab3de3e4a95cd6d984b9d5f3, type: 2}
   dictators:
   - {fileID: 11400000, guid: 82859928e16108b4c845430655c270bf, type: 2}
@@ -6887,6 +6905,7 @@ MonoBehaviour:
   - {fileID: 2044763320}
   - {fileID: 810969047}
   - {fileID: 299430385}
+  estimatedTimeToWriteOut: 5
 --- !u!114 &1940966834
 MonoBehaviour:
   m_ObjectHideFlags: 0
