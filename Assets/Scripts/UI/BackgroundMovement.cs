@@ -20,9 +20,14 @@ public class BackgroundMovement : MonoBehaviour
         _rawImage = GetComponent<RawImage>();
     }
 
-    private void Start()
+    private void OnEnable()
     {
         StartCoroutine(nameof(MoveTexture));
+    }
+
+    private void OnDisable()
+    {
+        StopCoroutine(nameof(MoveTexture));
     }
 
     private IEnumerator MoveTexture()
