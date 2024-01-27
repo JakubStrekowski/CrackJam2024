@@ -57,6 +57,11 @@ public class GameManager : MonoBehaviour
         HideButtons(false);
         LoadNewDictator(globalSettings.choosenWaifu);
         winCap = lovePoints + dictators[currentDictator].GetTotalScore() - 1;
+
+        if (dictators[currentDictator].name == "StalineczkaDictator")
+        {
+            StartCoroutine(nameof(StalineczkaAnimController));
+        }
     }
 
     void HideButtons(bool hide)
@@ -101,13 +106,28 @@ public class GameManager : MonoBehaviour
 
     private void CalculateSpriteState(int currentPoints)
     {
-        float thresholdValue = dictators[currentDictator].GetTotalScore() /
-                               (float)dictators[currentDictator].GetSkinCount();
+        if (dictators[currentDictator].name == "StalineczkaDictator")
+        {
+            if (currentPoints < 4)
+            {
+                dictators[currentDictator].stalineczkaAnimState = EStalineczkaAnimState.Angri;
+            }
+            else
+            {
+                dictators[currentDictator].stalineczkaAnimState = EStalineczkaAnimState.Neutral;
+            }
+        }
+        else
+        {
+            float thresholdValue = dictators[currentDictator].GetTotalScore() /
+                                   (float)dictators[currentDictator].GetSkinCount();
 
-        int selectedIndex = Mathf.FloorToInt((float)currentPoints / thresholdValue);
-        selectedIndex = Math.Clamp(selectedIndex, 0, dictators[currentDictator].GetSkinCount() - 1);
+            int selectedIndex = Mathf.FloorToInt((float)currentPoints / thresholdValue);
+            selectedIndex = Math.Clamp(selectedIndex, 0, dictators[currentDictator].GetSkinCount() - 1);
 
-        dictatorRepresentation.sprite = dictators[currentDictator].skinStates[selectedIndex];
+            dictatorRepresentation.sprite = dictators[currentDictator].skinStates[selectedIndex];
+        }
+        
     }
     
     [ContextMenu("LoadDialog")]
@@ -151,8 +171,10 @@ public class GameManager : MonoBehaviour
         LoadDialog();
     }
 
+    private bool _isEnded;
     private void EndGame(MeetingResult result)
     {
+        _isEnded = true;
         Debug.Log($"Game ended {lovePoints} !");
         gameplayPanel.SetActive(false);
         resultPanel.SetActive(true);
@@ -187,6 +209,29 @@ public class GameManager : MonoBehaviour
     public void BackToMenu()
     {
         SceneManager.LoadScene(0);
+    }
+
+    private IEnumerator StalineczkaAnimController()
+    {
+        while (!_isEnded)
+        {
+            if (dictators[currentDictator].stalineczkaAnimState == EStalineczkaAnimState.Neutral)
+            {
+                dictators[currentDictator].stalineczkaSpriteId = (dictators[currentDictator].stalineczkaSpriteId + 1) % dictators[currentDictator].stalineczkaNeutral.Length;
+                
+                dictatorRepresentation.sprite = dictators[currentDictator]
+                    .stalineczkaNeutral[dictators[currentDictator].stalineczkaSpriteId];
+            }
+            if (dictators[currentDictator].stalineczkaAnimState == EStalineczkaAnimState.Angri)
+            {
+                dictators[currentDictator].stalineczkaSpriteId = (dictators[currentDictator].stalineczkaSpriteId + 1) % dictators[currentDictator].stalineczkaAngri.Length;
+                
+                dictatorRepresentation.sprite = dictators[currentDictator]
+                    .stalineczkaAngri[dictators[currentDictator].stalineczkaSpriteId];
+            }
+
+            yield return new WaitForSeconds(0.25f);
+        }
     }
 }
 public enum MeetingResult

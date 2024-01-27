@@ -4,6 +4,12 @@ using System.Linq;
 using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
+public enum EStalineczkaAnimState
+{
+    Angri,
+    Neutral
+}
+
 [CreateAssetMenu(menuName = "ScriptableObjects/Dictator")]
 public class DictatorChan : ScriptableObject
 {
@@ -16,6 +22,10 @@ public class DictatorChan : ScriptableObject
     [SerializeField] private Sentence[] sentencesReference;
 
     public Sprite[] skinStates;
+    public Sprite[] stalineczkaNeutral;
+    public Sprite[] stalineczkaAngri;
+    public EStalineczkaAnimState stalineczkaAnimState;
+    public int stalineczkaSpriteId;
 
     private List<Sentence> sentencesBuffer = new List<Sentence>();
 

@@ -12,5 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e513beaa93330c441907f5de8fd39c40, type: 3}
   m_Name: StalSentence4
   m_EditorClassIdentifier: 
-  description: 
-  answers: []
+  description: Comrade, have you ever dreamt of taking a romantic tank ride under
+    the stars? It could be a perfect setting for our friendship to blossom~! What
+    do you say?
+  answers:
+  - answer: A tank ride might be a bit too romantic for me, comrade. Can we plan
+      something more casual?
+    points: -1
+  - answer: I'm not really a fan of tanks, comrade. Maybe we could find another way
+      to enjoy the night together?
+    points: -1
+  - answer: A T-55 ride under the stars sounds magical, comrade! Let's make it happen,
+      and shells cover the battlefield!
+    points: 1
