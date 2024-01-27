@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e513beaa93330c441907f5de8fd39c40, type: 3}
+  m_Name: AdaSentence 5
+  m_EditorClassIdentifier: 
+  description: Nyaa~ Senpai, wouldn't it be romantic if we learned a dance together?
+    Maybe a waltz? I heard it's a dance fit for a Fuhrer~! What do you say?
+  answers:
+  - answer: I'm not very good at dancing. Maybe we could find a different activity?
+    points: -1
+  - answer: '[do a moonwalk]'
+    points: 1
+  - answer: A dance sounds nice! Let's give the waltz a try, it could be fun.
+    points: 1

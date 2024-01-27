@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8aa6063059039024f9b6e970d5868b0e, type: 3}
-  m_Name: TestDictator
+  m_Name: Janina Pawelska
   m_EditorClassIdentifier: 
-  dictatorName: TESTOWA CHAN
-  dictatorDescription: Lubi wykrzaczac unity
+  dictatorName: Janina Pawelska
+  dictatorDescription: 
   image: {fileID: 21300000, guid: d87c9a85062d4984fa771ed4767c0943, type: 3}
-  background: {fileID: 21300000, guid: d9ccb69c36c3e15458f33431694d4498, type: 3}
+  background: {fileID: 21300000, guid: 6d648911b7e8d8f42a6c14cdca975502, type: 3}
   sentencesReference:
-  - {fileID: 11400000, guid: fc53c147b21db2744b2d8bbde49cabe7, type: 2}
-  - {fileID: 11400000, guid: b803321b70ce848419c50e462aff8267, type: 2}
+  - {fileID: 11400000, guid: 85071733e6b39744497487756fe579a9, type: 2}
+  - {fileID: 11400000, guid: 9056244707c081c4eb071f48e3ad48bf, type: 2}
+  - {fileID: 11400000, guid: cc74c12cac65b104895df56e9520148e, type: 2}

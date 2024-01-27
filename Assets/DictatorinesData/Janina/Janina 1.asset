@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e513beaa93330c441907f5de8fd39c40, type: 3}
-  m_Name: Test sentence 1
+  m_Name: Janina 1
   m_EditorClassIdentifier: 
-  description: TEST 2
+  description: TEST
   answers:
-  - answer: god
+  - answer: 1
     points: 1
-  - answer: bad
+  - answer: 0
+    points: 0
+  - answer: -1
     points: -1
-  - answer: better
-    points: 5
