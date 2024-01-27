@@ -12,6 +12,10 @@ public class GameManager : MonoBehaviour
     int lovePoints = 0;
     Sentence currentSentence;
 
+    [Header("Panels")]
+    [SerializeField] private GameObject gameplayPanel;
+    [SerializeField] private GameObject resultPanel;
+
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI dictatorName;
     [SerializeField] private TextMeshProUGUI question;
@@ -19,12 +23,16 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        gameplayPanel.SetActive(true);
+        resultPanel.SetActive(false);
+
         for(int i = 0; i < dialogButtons.Length; i++)
         {
             int a = i;
             dialogButtons[a].onClick.AddListener(() => SelectDialogOption(a));
         }
         HideButtons(false);
+
         //NA POTRZEBY TESTU
         LoadNewDictator(0);
     }
@@ -51,7 +59,7 @@ public class GameManager : MonoBehaviour
         if (!dictators[currentDictator].IsMoreSentences())
         {
             Debug.Log("No more sentences!");
-            EndGame();
+            EndGame(MeetingResult.Neutral);
             return;
         }
 
@@ -79,9 +87,27 @@ public class GameManager : MonoBehaviour
         LoadDialog();
     }
 
-    private void EndGame()
+    private void EndGame(MeetingResult result)
     {
         Debug.Log("Game ended!");
-        HideButtons(false);
+        gameplayPanel.SetActive(false);
+        resultPanel.SetActive(true);
+        switch (result)
+        {
+            case MeetingResult.Good:
+                break;
+            case MeetingResult.Neutral:
+                break;
+            case MeetingResult.Bad:
+                break;
+            default:
+                break;
+        }
     }
+}
+public enum MeetingResult
+{
+    Good,
+    Neutral,
+    Bad
 }

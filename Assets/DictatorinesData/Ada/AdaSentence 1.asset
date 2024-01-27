@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e513beaa93330c441907f5de8fd39c40, type: 3}
+  m_Name: AdaSentence 1
+  m_EditorClassIdentifier: 
+  description: Nyaa~ Senpai, did you know I love listening to music? What's your
+    favorite song? Maybe something like 'Erika'?
+  answers:
+  - answer: I prefer "Poland Is Not Yet Lost"
+    points: -3
+  - answer: Hmm, I'm more into pop music, but sure, let's give a try!
+    points: 1
+  - answer: "I prefer \"Bo\u017Ce, Caria chrani\""
+    points: -2

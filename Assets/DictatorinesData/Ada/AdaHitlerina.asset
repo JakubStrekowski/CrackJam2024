@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aa6063059039024f9b6e970d5868b0e, type: 3}
+  m_Name: AdaHitlerina
+  m_EditorClassIdentifier: 
+  dictatorName: Ada Hitlerina
+  dictatorDescription: "Nie\u015Bmia\u0142y fanatyczka zwierz\u0105t i low-BDSM"
+  sentencesReference:
+  - {fileID: 11400000, guid: 75b10139ece839d4e97673a2e4b83551, type: 2}
+  - {fileID: 11400000, guid: 65bad92cf14f31846aaa5a5fa6134cdb, type: 2}
+  - {fileID: 11400000, guid: 79be904f6b8136142ae41a7882631261, type: 2}
+  - {fileID: 11400000, guid: abb226bf43c5c4549bc2f9db4825811d, type: 2}
+  - {fileID: 11400000, guid: d907d572bbf9d484695c95a4a627bbed, type: 2}
