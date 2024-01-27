@@ -489,6 +489,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2674792950876987768, guid: 159ee363005efff409a0f1af4394eb29, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cdd7bb44c41217547aae04f88e36089e, type: 3}
     - target: {fileID: 3357385963220529803, guid: 159ee363005efff409a0f1af4394eb29, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -517,6 +521,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 3529212992731095438, guid: 159ee363005efff409a0f1af4394eb29, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -375
+      objectReference: {fileID: 0}
+    - target: {fileID: 4067377992627558473, guid: 159ee363005efff409a0f1af4394eb29, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 19e8f330e7f283c46b915f513dda0ee0, type: 3}
     - target: {fileID: 4406120221391169127, guid: 159ee363005efff409a0f1af4394eb29, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -617,6 +629,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6028770055763257419, guid: 159ee363005efff409a0f1af4394eb29, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 375
+      objectReference: {fileID: 0}
     - target: {fileID: 6103093548661956513, guid: 159ee363005efff409a0f1af4394eb29, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -655,6 +671,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7004652790228832567, guid: 159ee363005efff409a0f1af4394eb29, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763519788563392570, guid: 159ee363005efff409a0f1af4394eb29, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
