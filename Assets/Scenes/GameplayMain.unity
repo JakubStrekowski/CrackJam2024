@@ -6682,6 +6682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d36958306cb81e4b8bd70ee2ffa8c90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  globalSettings: {fileID: 11400000, guid: 56791315ab3de3e4a95cd6d984b9d5f3, type: 2}
   dictators:
   - {fileID: 11400000, guid: 82859928e16108b4c845430655c270bf, type: 2}
   gameplayPanel: {fileID: 1139306950}

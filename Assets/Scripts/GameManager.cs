@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-
+    [SerializeField] private GlobalSettings globalSettings;
     [SerializeField] private DictatorChan[] dictators;
     int currentDictator = 0;
     int lovePoints = 0;
@@ -32,9 +32,7 @@ public class GameManager : MonoBehaviour
             dialogButtons[a].onClick.AddListener(() => SelectDialogOption(a));
         }
         HideButtons(false);
-
-        //NA POTRZEBY TESTU
-        LoadNewDictator(0);
+        LoadNewDictator(globalSettings.choosenWaifu);
     }
 
     void HideButtons(bool hide)
