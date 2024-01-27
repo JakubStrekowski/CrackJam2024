@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "ScriptableObjects/Dictator")]
@@ -8,7 +9,10 @@ public class DictatorChan : ScriptableObject
 {
     [SerializeField] private string dictatorName;
     [SerializeField] private string dictatorDescription;
-
+    [Space]
+    [SerializeField] private Sprite image;
+    [SerializeField] private Sprite background;
+    [Space]
     [SerializeField] private Sentence[] sentencesReference;
 
     private List<Sentence> sentencesBuffer = new List<Sentence>();
@@ -43,5 +47,13 @@ public class DictatorChan : ScriptableObject
     public string GetDictatorDescription()
     {
         return dictatorDescription;
+    }
+    public Sprite GetDictatorImage()
+    {
+        return image;
+    }
+    public Sprite GetDictatorBackground() 
+    {
+        return background;
     }
 }

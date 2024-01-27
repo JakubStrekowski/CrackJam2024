@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
             int a = i;
             dialogButtons[a].onClick.AddListener(() => SelectDialogOption(a));
         }
+
         HideButtons(false);
         LoadNewDictator(globalSettings.choosenWaifu);
     }
@@ -87,9 +88,14 @@ public class GameManager : MonoBehaviour
 
     public void LoadNewDictator(int i)
     {
-        currentDictator = Mathf.Clamp(i, 0, dictators.Length-1);
+        currentDictator = Mathf.Clamp(i, 0, dictators.Length);
+
         dictators[currentDictator].PrepreDictator();
         dictatorName.SetText(dictators[currentDictator].GetDictatorName());
+
+        dictatorRepresentation.sprite = dictators[currentDictator].GetDictatorImage();
+        backgroundRepresentation.sprite = dictators[currentDictator].GetDictatorBackground();
+
         LoadDialog();
     }
 
