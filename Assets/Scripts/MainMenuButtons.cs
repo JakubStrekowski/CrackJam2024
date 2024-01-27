@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class MainMenuButtons : MonoBehaviour
 {
+    [SerializeField] private GameObject adultPromt;
     [SerializeField] private Button adultConsent;
     [SerializeField] private Slider volumeSlider;
     
@@ -15,9 +16,18 @@ public class MainMenuButtons : MonoBehaviour
 
     public AudioMixer mixer;
 
+    [ContextMenu("ClearPrefs")]
+    public void ClearPlayerPrefs()
+    {
+        PlayerPrefs.DeleteAll();
+    }
     private void Start()
     {
         volumeSlider.value = PlayerPrefs.GetFloat("MusicVolume", 0.75f);
+        bool b = PlayerPrefs.GetInt("Agreed") >= (int)(5);
+        adultPromt.gameObject.SetActive(!b);
+        Debug.Log(PlayerPrefs.GetInt("Agreed"));
+        Debug.Log(b);
     }
 
     public void StartGame()

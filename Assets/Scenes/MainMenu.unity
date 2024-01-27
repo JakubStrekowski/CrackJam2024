@@ -481,6 +481,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2085482002438483878, guid: 159ee363005efff409a0f1af4394eb29, type: 3}
+      propertyPath: adultPromt
+      value: 
+      objectReference: {fileID: 4406120222750986781}
     - target: {fileID: 2394516349403641779, guid: 159ee363005efff409a0f1af4394eb29, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -655,3 +659,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 159ee363005efff409a0f1af4394eb29, type: 3}
+--- !u!1 &4406120222750986781 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8763519788563392570, guid: 159ee363005efff409a0f1af4394eb29, type: 3}
+  m_PrefabInstance: {fileID: 4406120222750986780}
+  m_PrefabAsset: {fileID: 0}

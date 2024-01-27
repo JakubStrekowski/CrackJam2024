@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -24,9 +25,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI question;
     [SerializeField] private Button[] dialogButtons;
     [SerializeField] private float estimatedTimeToWriteOut = 5.0f;
+    [Space]
+    [SerializeField] private TextMeshProUGUI resultOutput;
 
     private void Start()
     {
+        PlayerPrefs.SetInt("Agreed",2137);
         gameplayPanel.SetActive(true);
         resultPanel.SetActive(false);
 
@@ -50,7 +54,6 @@ public class GameManager : MonoBehaviour
 
     public void SelectDialogOption(int id)
     {
-        Debug.Log(id);
         id = Mathf.Clamp(id, 0, currentSentence.GetAnswersCount()-1);
         lovePoints += currentSentence.GetSentence(id).GetAnswetValue();
         if (lovePoints >= winCap) EndGame(MeetingResult.Good);
@@ -101,18 +104,22 @@ public class GameManager : MonoBehaviour
 
     private void EndGame(MeetingResult result)
     {
-        Debug.Log("Game ended!");
+        Debug.Log($"Game ended {lovePoints} !");
         gameplayPanel.SetActive(false);
         resultPanel.SetActive(true);
         switch (result)
         {
             case MeetingResult.Good:
+                resultOutput.SetText("Great job soldier o7");
                 break;
             case MeetingResult.Neutral:
+                resultOutput.SetText("Meh, go back to playing games");
                 break;
             case MeetingResult.Bad:
+                resultOutput.SetText("Run, NOW!");
                 break;
             default:
+                resultOutput.SetText("How did we got here?");
                 break;
         }
     }
@@ -127,6 +134,10 @@ public class GameManager : MonoBehaviour
             yield return waitTime;
             if (sentence[i] == ',' || sentence[i] == ',') yield return waitTime;
         }
+    }
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }
 public enum MeetingResult
