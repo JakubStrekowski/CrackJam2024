@@ -9,7 +9,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GlobalSettings globalSettings;
     [SerializeField] private DictatorChan[] dictators;
     int currentDictator = 0;
-    int lovePoints = 0;
+    int lovePoints = 2;
+    int winCap = 10;
     Sentence currentSentence;
 
     [Header("Panels")]
@@ -48,6 +49,8 @@ public class GameManager : MonoBehaviour
         Debug.Log(id);
         id = Mathf.Clamp(id, 0, currentSentence.GetAnswersCount()-1);
         lovePoints += currentSentence.GetSentence(id).GetAnswetValue();
+        if (lovePoints >= winCap) EndGame(MeetingResult.Good);
+        else if (lovePoints <= 0) EndGame(MeetingResult.Bad);
         LoadDialog();
     }
 
