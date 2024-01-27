@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI dictatorName;
     [SerializeField] private TextMeshProUGUI question;
     [SerializeField] private Button[] dialogButtons;
+    [SerializeField] private float estimatedTimeToWriteOut = 5.0f;
 
     private void Start()
     {
@@ -66,6 +67,8 @@ public class GameManager : MonoBehaviour
 
         currentSentence = dictators[currentDictator].GetNextSentence();
         question.SetText(currentSentence.GetDescription());
+        StopAllCoroutines();
+        StartCoroutine(WriteoutSentence(currentSentence.GetDescription(), question));
         for (int i = 0; i < dialogButtons.Length && i< currentSentence.GetAnswersCount(); i++)
         {
             //update buttons decriptions
@@ -103,6 +106,18 @@ public class GameManager : MonoBehaviour
                 break;
             default:
                 break;
+        }
+    }
+
+    private IEnumerator WriteoutSentence(string sentence, TextMeshProUGUI output)
+    {
+        var waitTime = new WaitForSeconds(estimatedTimeToWriteOut/sentence.Length);
+        output.text = "";
+        for (int i=0; i<sentence.Length;i++) 
+        {
+            output.text += sentence[i];
+            yield return waitTime;
+            if (sentence[i] == ',' || sentence[i] == ',') yield return waitTime;
         }
     }
 }
