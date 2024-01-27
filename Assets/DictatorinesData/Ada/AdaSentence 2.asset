@@ -18,6 +18,6 @@ MonoBehaviour:
   - answer: Nah, I rather pass
     points: -1
   - answer: Of course babe, I want to help. How about some aintings and modern furniture?
-    points: 0
+    points: -1
   - answer: Sure, I can help. How about some vintage posters and cozy furniture?
     points: 2

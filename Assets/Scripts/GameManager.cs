@@ -4,13 +4,19 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private Image dictatorRepresentation; 
     [SerializeField] private Image backgroundRepresentation; 
+
     [SerializeField] private GlobalSettings globalSettings;
     [SerializeField] private DictatorChan[] dictators;
+
+    [SerializeField] private ParticleSystem happyParticles;
+    [SerializeField] private ParticleSystem sadParticles;
+
     int currentDictator = 0;
     int lovePoints = 2;
     int winCap = 10;
@@ -28,8 +34,14 @@ public class GameManager : MonoBehaviour
     [Space]
     [SerializeField] private TextMeshProUGUI resultOutput;
 
+    private Sequence _seq;
+    private RectTransform _rect;
+    [SerializeField] private Ease ease;
+
     private void Start()
     {
+        _rect = dictatorRepresentation.gameObject.GetComponent<RectTransform>();
+        
         PlayerPrefs.SetInt("Agreed",2137);
         gameplayPanel.SetActive(true);
         resultPanel.SetActive(false);
@@ -55,7 +67,25 @@ public class GameManager : MonoBehaviour
     public void SelectDialogOption(int id)
     {
         id = Mathf.Clamp(id, 0, currentSentence.GetAnswersCount()-1);
-        lovePoints += currentSentence.GetSentence(id).GetAnswetValue();
+
+        int points = currentSentence.GetSentence(id).GetAnswetValue();
+        Debug.Log(points);
+        lovePoints += points;
+
+        if (points > 0) 
+        {
+            _seq = DOTween.Sequence();
+            _seq.Append(_rect.DOMoveY(_rect.transform.position.y + 2, 0.5f).SetEase(ease));
+            _seq.Append(_rect.DOMoveY(_rect.transform.position.y, 1).SetEase(ease));
+
+            _seq.Play();
+            happyParticles.Play();
+        }
+        if (points < 0)
+        {
+            sadParticles.Play();
+        }
+
         if (lovePoints >= winCap) EndGame(MeetingResult.Good);
         else if (lovePoints <= 0) EndGame(MeetingResult.Bad);
         LoadDialog();
