@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 public class MainMenuButtons : MonoBehaviour
 {
     private const int GameplaySceneId = 1;
+
+    public AudioMixer mixer;
 
     public void StartGame()
     {
@@ -20,6 +23,10 @@ public class MainMenuButtons : MonoBehaviour
         Application.Quit();
         #endif
     }
-    
+
+    public void SetLevel (float sliderValue)
+    {
+        mixer.SetFloat("MusicVol", Mathf.Log10(sliderValue) * 20);
+    }
     
 }
