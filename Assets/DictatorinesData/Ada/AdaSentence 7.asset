@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e513beaa93330c441907f5de8fd39c40, type: 3}
-  m_Name: KimSentence2
+  m_Name: AdaSentence 7
   m_EditorClassIdentifier: 
-  description: '[Kim moves hand closer to yours...]'
+  description: '[Ada looks at you without saying anything]'
   answers:
-  - answer: '[grab her knee]'
+  - answer: So... Nice weather, isn't it?
     points: -1
-  - answer: '[hold her hand]'
+  - answer: Oh my gosh, your tail. Is. So. FLUFFY~!
     points: 1
-  - answer: '[high five her hand]'
+  - answer: '[Stare back in silence]'
     points: -1

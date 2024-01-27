@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e513beaa93330c441907f5de8fd39c40, type: 3}
   m_Name: KimSentence1
   m_EditorClassIdentifier: 
-  description: test
+  description: '[Kim looks at you without saying anything]'
   answers:
-  - answer: good
-    points: 1
-  - answer: neutral
-    points: 0
-  - answer: bad
+  - answer: Hey, I recently saw this meme on free internet...
     points: -1
+  - answer: Eeee.... yyyyy...
+    points: -1
+  - answer: '[Stare back in silence]'
+    points: 1
