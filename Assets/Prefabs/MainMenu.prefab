@@ -2857,6 +2857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f709247dabf8db049a61b21cb829a76b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  adultPromt: {fileID: 0}
   adultConsent: {fileID: 725258332607300965}
   volumeSlider: {fileID: 7878513038072774438}
   mixer: {fileID: 24100000, guid: f41cad64c1fe88a41b8f031447cd8fe2, type: 2}
@@ -3458,26 +3459,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Developers:
-
-    Jacopo
-
-    DAXPL
-
-    2D Graphics:
-
-    Macierz
-
-    Ignastyn
-
-    Audio:
-
-    Emma
-    Almond
-
-    Mini Almond
-
-'
+  m_text: "Developers:\nJakub \"Jacopo\" Str\u0119kowski\nMi\u0142osz \"DAXPL\" Klim\n2D
+    Graphics:\nMacierz\nPawe\u0142 \"Ignastyn\" J\u0119drzejczak\nAudio:\nEmma Almond\nMini
+    Almond\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a398dd6d00d287a45af91cb97b0ae73b, type: 2}
   m_sharedMaterial: {fileID: -9088700809519970033, guid: a398dd6d00d287a45af91cb97b0ae73b, type: 2}
