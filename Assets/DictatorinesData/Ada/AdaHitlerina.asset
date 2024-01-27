@@ -28,3 +28,13 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 39c69b733788ed3438034ff6bb17f91a, type: 3}
   - {fileID: 21300000, guid: 67486770149d2b440bb5f512c33ecac0, type: 3}
   - {fileID: 21300000, guid: ad140eca58c50a74da59f22ad919d2f0, type: 3}
+  stalineczkaNeutral: []
+  stalineczkaAngri: []
+  stalineczkaAnimState: 0
+  stalineczkaSpriteId: 0
+  successSkin:
+  - {fileID: 21300000, guid: b333c11990bb66a4bbefbef55f211969, type: 3}
+  - {fileID: 21300000, guid: 52e515535b31f7744b9fb2c9dcd0fce0, type: 3}
+  - {fileID: 21300000, guid: 3755f93c0a355e247b44b9eff4d25197, type: 3}
+  - {fileID: 21300000, guid: f0bb80361d1d76141ac51e757ae17e86, type: 3}
+  successSkinId: 2

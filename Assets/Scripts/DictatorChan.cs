@@ -26,6 +26,9 @@ public class DictatorChan : ScriptableObject
     public Sprite[] stalineczkaAngri;
     public EStalineczkaAnimState stalineczkaAnimState;
     public int stalineczkaSpriteId;
+    
+    public Sprite[] successSkin;
+    public int successSkinId;
 
     private List<Sentence> sentencesBuffer = new List<Sentence>();
 

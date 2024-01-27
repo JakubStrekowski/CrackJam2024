@@ -9,6 +9,7 @@ using DG.Tweening;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private GameObject successDictatorRepresentation; 
     [SerializeField] private Image dictatorRepresentation; 
     [SerializeField] private Image backgroundRepresentation; 
 
@@ -182,6 +183,10 @@ public class GameManager : MonoBehaviour
         {
             case MeetingResult.Good:
                 resultOutput.SetText("Great job soldier o7");
+                dictatorRepresentation.gameObject.SetActive(false);
+                successDictatorRepresentation.SetActive(true);
+                successDictatorRepresentation.GetComponent<DictatorSuccess>()
+                    .SetDictatorSuccess(dictators[currentDictator]);
                 break;
             case MeetingResult.Neutral:
                 resultOutput.SetText("Meh, go back to playing games");
