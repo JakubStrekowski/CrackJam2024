@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private ParticleSystem happyParticles;
     [SerializeField] private ParticleSystem sadParticles;
+    
+    [SerializeField] private BackToMenu backToMenuBtn;
 
     int currentDictator = 0;
     int lovePoints = 2;
@@ -130,6 +132,8 @@ public class GameManager : MonoBehaviour
         }
         
     }
+
+    private Coroutine _writeCoroutine;
     
     [ContextMenu("LoadDialog")]
     public void LoadDialog()
@@ -143,8 +147,12 @@ public class GameManager : MonoBehaviour
 
         currentSentence = dictators[currentDictator].GetNextSentence();
         question.SetText(currentSentence.GetDescription());
-        StopAllCoroutines();
-        StartCoroutine(WriteoutSentence(currentSentence.GetDescription(), question));
+        
+        if (_writeCoroutine != null)
+        {
+            StopCoroutine(_writeCoroutine);
+        }
+        _writeCoroutine = StartCoroutine(WriteoutSentence(currentSentence.GetDescription(), question));
         for (int i = 0; i < dialogButtons.Length && i< currentSentence.GetAnswersCount(); i++)
         {
             //update buttons decriptions
@@ -179,6 +187,7 @@ public class GameManager : MonoBehaviour
         Debug.Log($"Game ended {lovePoints} !");
         gameplayPanel.SetActive(false);
         resultPanel.SetActive(true);
+        backToMenuBtn.gameObject.SetActive(false);
         switch (result)
         {
             case MeetingResult.Good:
