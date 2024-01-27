@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e513beaa93330c441907f5de8fd39c40, type: 3}
+  m_Name: StalSentence2
+  m_EditorClassIdentifier: 
+  description: Comrade, have you ever considered learning the art of dance? Perhaps
+    a traditional Russian dance? It could be a celebration of our camaraderie~! What
+    do you think?
+  answers:
+  - answer: I'm not really a dancer, comrade. Maybe we could find a different way
+      to celebrate our friendship? If you know, what i mean...
+    points: 0
+  - answer: Dancing sounds like a babcia-pierogi, comrade! Let's give the Russian
+      dance a try.
+    points: 1
+  - answer: Russian dance might be a bit too energetic for me, comrade. Can we explore
+      other options?
+    points: -1

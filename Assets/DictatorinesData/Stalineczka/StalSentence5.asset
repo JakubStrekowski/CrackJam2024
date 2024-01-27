@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e513beaa93330c441907f5de8fd39c40, type: 3}
+  m_Name: StalSentence5
+  m_EditorClassIdentifier: 
+  description: Comrade, what do you think about creating matching friendship tatoo?
+    It would be a symbol of our unique connection and a sweet reminder of our camaraderie~!
+    What do you think?
+  answers:
+  - answer: I'm not really into jewelry, comrade. Maybe we could find another way
+      to symbolize our friendship
+    points: 0
+  - answer: Matching tatooes? I love the idea, comrade! Let's craft them together.
+    points: 1
+  - answer: Matching bracelets might be a bit too sentimental for me, comrade. Can
+      we think of something simpler?
+    points: 0

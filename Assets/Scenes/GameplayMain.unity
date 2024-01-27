@@ -11375,6 +11375,7 @@ RectTransform:
   m_Children:
   - {fileID: 1136554939}
   - {fileID: 1857543071}
+  - {fileID: 1450063245}
   m_Father: {fileID: 243235244}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11499,6 +11500,111 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1184671088}
   m_CullTransparentMesh: 1
+--- !u!1 &1450063241
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1450063245}
+  - component: {fileID: 1450063244}
+  - component: {fileID: 1450063243}
+  - component: {fileID: 1450063242}
+  - component: {fileID: 1450063246}
+  m_Layer: 5
+  m_Name: SuccessDictator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1450063242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1450063241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcc2d16365d6a2842a67d9a32be52875, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScale: {x: 1.01, y: 1.025, z: 1}
+  duration: 2.4
+  ease: 6
+--- !u!114 &1450063243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1450063241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: cb223dcb568b8b34ba66603e2c44c8fd, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1450063244
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1450063241}
+  m_CullTransparentMesh: 1
+--- !u!224 &1450063245
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1450063241}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1139306951}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -185, y: -75.06}
+  m_SizeDelta: {x: 1000, y: 1000}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1450063246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1450063241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bce76c2e16964824b9ceba3b11ae24b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1509398331
 GameObject:
   m_ObjectHideFlags: 0
@@ -16881,12 +16987,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d36958306cb81e4b8bd70ee2ffa8c90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  successDictatorRepresentation: {fileID: 1450063241}
   dictatorRepresentation: {fileID: 1136554940}
   backgroundRepresentation: {fileID: 1139306952}
   globalSettings: {fileID: 11400000, guid: 56791315ab3de3e4a95cd6d984b9d5f3, type: 2}
   dictators:
   - {fileID: 11400000, guid: 82859928e16108b4c845430655c270bf, type: 2}
   - {fileID: 11400000, guid: ee0c7ddea04250447b246e0d5cc160b3, type: 2}
+  - {fileID: 11400000, guid: 1d4aa043628f5d24a94f6b8aa4768f34, type: 2}
+  - {fileID: 11400000, guid: ba4f2cddcbd5b594ea5eed8948008bc0, type: 2}
   happyParticles: {fileID: 794900765}
   sadParticles: {fileID: 1103393163}
   gameplayPanel: {fileID: 1857543070}
@@ -16899,7 +17008,8 @@ MonoBehaviour:
   - {fileID: 299430385}
   estimatedTimeToWriteOut: 5
   resultOutput: {fileID: 765837103}
-  ease: 0
+  ease: 9
+  easeOut: 30
 --- !u!114 &1940966834
 MonoBehaviour:
   m_ObjectHideFlags: 0

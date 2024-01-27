@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -8,6 +9,7 @@ using DG.Tweening;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private GameObject successDictatorRepresentation; 
     [SerializeField] private Image dictatorRepresentation; 
     [SerializeField] private Image backgroundRepresentation; 
 
@@ -37,6 +39,7 @@ public class GameManager : MonoBehaviour
     private Sequence _seq;
     private RectTransform _rect;
     [SerializeField] private Ease ease;
+    [SerializeField] private Ease easeOut;
 
     private void Start()
     {
@@ -54,6 +57,12 @@ public class GameManager : MonoBehaviour
 
         HideButtons(false);
         LoadNewDictator(globalSettings.choosenWaifu);
+        winCap = lovePoints + dictators[currentDictator].GetTotalScore() - 1;
+
+        if (dictators[currentDictator].name == "StalineczkaDictator")
+        {
+            StartCoroutine(nameof(StalineczkaAnimController));
+        }
     }
 
     void HideButtons(bool hide)
@@ -74,11 +83,14 @@ public class GameManager : MonoBehaviour
 
         if (points > 0) 
         {
-            _seq = DOTween.Sequence();
-            _seq.Append(_rect.DOMoveY(_rect.transform.position.y + 2, 0.5f).SetEase(ease));
-            _seq.Append(_rect.DOMoveY(_rect.transform.position.y, 1).SetEase(ease));
+            if (_seq == null || !_seq.IsPlaying())
+            {
+                _seq = DOTween.Sequence();
+                _seq.Append(_rect.DOMoveY(_rect.transform.position.y + 2, 0.5f).SetEase(ease));
+                _seq.Append(_rect.DOMoveY(_rect.transform.position.y, 1).SetEase(easeOut));
 
-            _seq.Play();
+                _seq.Play();
+            }
             happyParticles.Play();
         }
         if (points < 0)
@@ -86,11 +98,39 @@ public class GameManager : MonoBehaviour
             sadParticles.Play();
         }
 
+        CalculateSpriteState(lovePoints);
+
         if (lovePoints >= winCap) EndGame(MeetingResult.Good);
         else if (lovePoints <= 0) EndGame(MeetingResult.Bad);
         LoadDialog();
     }
 
+    private void CalculateSpriteState(int currentPoints)
+    {
+        if (dictators[currentDictator].name == "StalineczkaDictator")
+        {
+            if (currentPoints < 4)
+            {
+                dictators[currentDictator].stalineczkaAnimState = EStalineczkaAnimState.Angri;
+            }
+            else
+            {
+                dictators[currentDictator].stalineczkaAnimState = EStalineczkaAnimState.Neutral;
+            }
+        }
+        else
+        {
+            float thresholdValue = dictators[currentDictator].GetTotalScore() /
+                                   (float)dictators[currentDictator].GetSkinCount();
+
+            int selectedIndex = Mathf.FloorToInt((float)currentPoints / thresholdValue);
+            selectedIndex = Math.Clamp(selectedIndex, 0, dictators[currentDictator].GetSkinCount() - 1);
+
+            dictatorRepresentation.sprite = dictators[currentDictator].skinStates[selectedIndex];
+        }
+        
+    }
+    
     [ContextMenu("LoadDialog")]
     public void LoadDialog()
     {
@@ -132,8 +172,10 @@ public class GameManager : MonoBehaviour
         LoadDialog();
     }
 
+    private bool _isEnded;
     private void EndGame(MeetingResult result)
     {
+        _isEnded = true;
         Debug.Log($"Game ended {lovePoints} !");
         gameplayPanel.SetActive(false);
         resultPanel.SetActive(true);
@@ -141,6 +183,10 @@ public class GameManager : MonoBehaviour
         {
             case MeetingResult.Good:
                 resultOutput.SetText("Great job soldier o7");
+                dictatorRepresentation.gameObject.SetActive(false);
+                successDictatorRepresentation.SetActive(true);
+                successDictatorRepresentation.GetComponent<DictatorSuccess>()
+                    .SetDictatorSuccess(dictators[currentDictator]);
                 break;
             case MeetingResult.Neutral:
                 resultOutput.SetText("Meh, go back to playing games");
@@ -168,6 +214,29 @@ public class GameManager : MonoBehaviour
     public void BackToMenu()
     {
         SceneManager.LoadScene(0);
+    }
+
+    private IEnumerator StalineczkaAnimController()
+    {
+        while (!_isEnded)
+        {
+            if (dictators[currentDictator].stalineczkaAnimState == EStalineczkaAnimState.Neutral)
+            {
+                dictators[currentDictator].stalineczkaSpriteId = (dictators[currentDictator].stalineczkaSpriteId + 1) % dictators[currentDictator].stalineczkaNeutral.Length;
+                
+                dictatorRepresentation.sprite = dictators[currentDictator]
+                    .stalineczkaNeutral[dictators[currentDictator].stalineczkaSpriteId];
+            }
+            if (dictators[currentDictator].stalineczkaAnimState == EStalineczkaAnimState.Angri)
+            {
+                dictators[currentDictator].stalineczkaSpriteId = (dictators[currentDictator].stalineczkaSpriteId + 1) % dictators[currentDictator].stalineczkaAngri.Length;
+                
+                dictatorRepresentation.sprite = dictators[currentDictator]
+                    .stalineczkaAngri[dictators[currentDictator].stalineczkaSpriteId];
+            }
+
+            yield return new WaitForSeconds(0.25f);
+        }
     }
 }
 public enum MeetingResult

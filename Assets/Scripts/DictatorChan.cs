@@ -4,6 +4,12 @@ using System.Linq;
 using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
+public enum EStalineczkaAnimState
+{
+    Angri,
+    Neutral
+}
+
 [CreateAssetMenu(menuName = "ScriptableObjects/Dictator")]
 public class DictatorChan : ScriptableObject
 {
@@ -15,6 +21,15 @@ public class DictatorChan : ScriptableObject
     [Space]
     [SerializeField] private Sentence[] sentencesReference;
 
+    public Sprite[] skinStates;
+    public Sprite[] stalineczkaNeutral;
+    public Sprite[] stalineczkaAngri;
+    public EStalineczkaAnimState stalineczkaAnimState;
+    public int stalineczkaSpriteId;
+    
+    public Sprite[] successSkin;
+    public int successSkinId;
+
     private List<Sentence> sentencesBuffer = new List<Sentence>();
 
     public void PrepreDictator()
@@ -23,6 +38,17 @@ public class DictatorChan : ScriptableObject
         sentencesBuffer = new List<Sentence>(sentencesReference);
 
     }
+
+    public int GetTotalScore()
+    {
+        return sentencesReference.Length;
+    }
+
+    public int GetSkinCount()
+    {
+        return skinStates.Length;
+    }
+    
     public bool IsMoreSentences()
     {
         return sentencesBuffer.Count > 0;
