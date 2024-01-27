@@ -933,7 +933,7 @@ MonoBehaviour:
   m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.0001
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -2633,6 +2633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   adultConsent: {fileID: 725258332607300965}
+  volumeSlider: {fileID: 7878513038072774438}
   mixer: {fileID: 24100000, guid: f41cad64c1fe88a41b8f031447cd8fe2, type: 2}
 --- !u!1 &4476956225695438470
 GameObject:
