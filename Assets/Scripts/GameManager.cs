@@ -77,11 +77,14 @@ public class GameManager : MonoBehaviour
 
         if (points > 0) 
         {
-            _seq = DOTween.Sequence();
-            _seq.Append(_rect.DOMoveY(_rect.transform.position.y + 2, 0.5f).SetEase(ease));
-            _seq.Append(_rect.DOMoveY(_rect.transform.position.y, 1).SetEase(easeOut));
+            if (_seq == null || !_seq.IsPlaying())
+            {
+                _seq = DOTween.Sequence();
+                _seq.Append(_rect.DOMoveY(_rect.transform.position.y + 2, 0.5f).SetEase(ease));
+                _seq.Append(_rect.DOMoveY(_rect.transform.position.y, 1).SetEase(easeOut));
 
-            _seq.Play();
+                _seq.Play();
+            }
             happyParticles.Play();
         }
         if (points < 0)

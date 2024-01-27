@@ -22,3 +22,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 79be904f6b8136142ae41a7882631261, type: 2}
   - {fileID: 11400000, guid: abb226bf43c5c4549bc2f9db4825811d, type: 2}
   - {fileID: 11400000, guid: d907d572bbf9d484695c95a4a627bbed, type: 2}
+  - {fileID: 11400000, guid: 7a578efde3ebbff43adbd969f963565a, type: 2}
+  - {fileID: 11400000, guid: 11de522b6de01a849aad8f2779a9a7ac, type: 2}
+  skinStates:
+  - {fileID: 21300000, guid: 39c69b733788ed3438034ff6bb17f91a, type: 3}
+  - {fileID: 21300000, guid: 67486770149d2b440bb5f512c33ecac0, type: 3}
+  - {fileID: 21300000, guid: ad140eca58c50a74da59f22ad919d2f0, type: 3}

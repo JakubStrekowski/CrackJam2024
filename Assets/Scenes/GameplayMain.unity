@@ -16887,6 +16887,8 @@ MonoBehaviour:
   dictators:
   - {fileID: 11400000, guid: 82859928e16108b4c845430655c270bf, type: 2}
   - {fileID: 11400000, guid: ee0c7ddea04250447b246e0d5cc160b3, type: 2}
+  - {fileID: 11400000, guid: 1d4aa043628f5d24a94f6b8aa4768f34, type: 2}
+  - {fileID: 11400000, guid: ba4f2cddcbd5b594ea5eed8948008bc0, type: 2}
   happyParticles: {fileID: 794900765}
   sadParticles: {fileID: 1103393163}
   gameplayPanel: {fileID: 1857543070}
