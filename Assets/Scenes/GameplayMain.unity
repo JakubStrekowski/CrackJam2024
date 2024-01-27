@@ -16899,7 +16899,8 @@ MonoBehaviour:
   - {fileID: 299430385}
   estimatedTimeToWriteOut: 5
   resultOutput: {fileID: 765837103}
-  ease: 0
+  ease: 9
+  easeOut: 30
 --- !u!114 &1940966834
 MonoBehaviour:
   m_ObjectHideFlags: 0

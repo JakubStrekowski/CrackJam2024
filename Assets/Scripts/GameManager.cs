@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
     private Sequence _seq;
     private RectTransform _rect;
     [SerializeField] private Ease ease;
+    [SerializeField] private Ease easeOut;
 
     private void Start()
     {
@@ -76,7 +77,7 @@ public class GameManager : MonoBehaviour
         {
             _seq = DOTween.Sequence();
             _seq.Append(_rect.DOMoveY(_rect.transform.position.y + 2, 0.5f).SetEase(ease));
-            _seq.Append(_rect.DOMoveY(_rect.transform.position.y, 1).SetEase(ease));
+            _seq.Append(_rect.DOMoveY(_rect.transform.position.y, 1).SetEase(easeOut));
 
             _seq.Play();
             happyParticles.Play();
