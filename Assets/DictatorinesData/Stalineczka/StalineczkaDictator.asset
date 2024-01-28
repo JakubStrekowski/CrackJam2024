@@ -23,6 +23,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4ef2175d93fb868459b540fc111f28d2, type: 2}
   - {fileID: 11400000, guid: 758bdfec84bc3c347b02ed718a70c1fe, type: 2}
   - {fileID: 11400000, guid: c70ad7a8aede84e4ebfe38f02241f0ec, type: 2}
+  backgroundAnimationAtEnd:
+  - {fileID: 21300000, guid: bfb35c239eaef0845a977c26f365f7c4, type: 3}
+  - {fileID: 21300000, guid: cd5d7dccbd37dec43be3c12634bc8d04, type: 3}
+  - {fileID: 21300000, guid: bacb1f8082afeed4ab87ccadc31324d1, type: 3}
   skinStates:
   - {fileID: 21300000, guid: ab8297fc2c151b94bb7fc924407e08d7, type: 3}
   stalineczkaNeutral:
@@ -45,7 +49,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7da78607a59650d4f9df3d0d73a02ee1, type: 3}
   successSkinId: 2
   failureSkin:
-  - {fileID: 21300000, guid: 7a70a5dbc75c098418ad7be86d298794, type: 3}
-  - {fileID: 21300000, guid: 67146efb5b0c36f4babbaa2b722eaf6c, type: 3}
-  - {fileID: 21300000, guid: 21403c724a29f2e429225dfde436d235, type: 3}
+  - {fileID: 21300000, guid: 53e0d82d9872b654897a7cb4f9b10d19, type: 3}
+  - {fileID: 21300000, guid: a8f1ddfaa4c9b6c43ae0b3c8808afaef, type: 3}
+  - {fileID: 21300000, guid: 8ece21d9c7df64b4bab95b6eabacd5a0, type: 3}
   failureSkinId: 1

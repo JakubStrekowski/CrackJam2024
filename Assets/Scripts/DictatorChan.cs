@@ -1,7 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
 public enum EStalineczkaAnimState
@@ -20,6 +18,8 @@ public class DictatorChan : ScriptableObject
     [SerializeField] private Sprite background;
     [Space]
     [SerializeField] private Sentence[] sentencesReference;
+    [Space]
+    public Sprite[] backgroundAnimationAtEnd;
 
     public Sprite[] skinStates;
     public Sprite[] stalineczkaNeutral;

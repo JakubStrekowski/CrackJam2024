@@ -224,6 +224,12 @@ public class GameManager : MonoBehaviour
                 successDictatorRepresentation.SetActive(true);
                 successDictatorRepresentation.GetComponent<DictatorSuccess>()
                     .SetDictatorFailure(dictators[currentDictator]);
+
+                if (dictators[currentDictator].backgroundAnimationAtEnd.Length > 0)
+                {
+                    StartCoroutine(EndingBackgroundAnimation());
+                }
+
                 break;
             default:
                 resultOutput.SetText("How did we got here?");
@@ -238,6 +244,18 @@ public class GameManager : MonoBehaviour
         successDictatorRepresentation.SetActive(true);
         successDictatorRepresentation.GetComponent<DictatorSuccess>()
             .SetDictatorSuccess(dictators[currentDictator]);
+    }
+
+    private IEnumerator EndingBackgroundAnimation()
+    {
+        int i = 0;
+        int l = dictators[currentDictator].backgroundAnimationAtEnd.Length;
+        while (true)
+        {
+            backgroundRepresentation.sprite = dictators[currentDictator].backgroundAnimationAtEnd[i % l];
+            i++;
+            yield return new WaitForSeconds(0.25f);
+        }
     }
 
     private IEnumerator WriteoutSentence(string sentence, TextMeshProUGUI output)
