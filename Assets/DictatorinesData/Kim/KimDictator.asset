@@ -17,6 +17,11 @@ MonoBehaviour:
   image: {fileID: 21300000, guid: 4b4055b375737574d86fbe5dfa21c725, type: 3}
   background: {fileID: 21300000, guid: f7725cf0620ce6f46b3f7fc9986f61c9, type: 3}
   sentencesReference:
+  - {fileID: 11400000, guid: 790257cd1cda75b4c8a458c5e608277e, type: 2}
+  - {fileID: 11400000, guid: 3536b3402ef3635479f0a42aeac0b0fe, type: 2}
+  - {fileID: 11400000, guid: 54960f91429e05a4ca3a535f6fe0523a, type: 2}
+  - {fileID: 11400000, guid: aa73b12118f26744287aea2c69d42b23, type: 2}
+  - {fileID: 11400000, guid: 764032837658d6144b8b6837566f91c8, type: 2}
   - {fileID: 11400000, guid: c2dae7d262bfa54438b3c77bf62e1b26, type: 2}
   - {fileID: 11400000, guid: 467f75e3c25683a4da1edda62a599b60, type: 2}
   - {fileID: 11400000, guid: 0bf729a8b3857c14f909f84689039a07, type: 2}

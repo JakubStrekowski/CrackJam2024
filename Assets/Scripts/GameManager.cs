@@ -18,7 +18,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private ParticleSystem happyParticles;
     [SerializeField] private ParticleSystem sadParticles;
-    
+    [SerializeField] private ParticleSystem clickParticles;
+
     [SerializeField] private BackToMenu backToMenuBtn;
 
     int currentDictator = 0;
@@ -64,6 +65,16 @@ public class GameManager : MonoBehaviour
         if (dictators[currentDictator].name == "StalineczkaDictator")
         {
             StartCoroutine(nameof(StalineczkaAnimController));
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Debug.Log(Input.mousePosition);
+            clickParticles.transform.position = Input.mousePosition;
+            clickParticles.Play();
         }
     }
 

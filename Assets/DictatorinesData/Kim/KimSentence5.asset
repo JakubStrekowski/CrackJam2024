@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e513beaa93330c441907f5de8fd39c40, type: 3}
   m_Name: KimSentence5
   m_EditorClassIdentifier: 
-  description: test
+  description: Oh? You brought me a present?
   answers:
-  - answer: good
-    points: 1
-  - answer: neutral
+  - answer: '[Give her a rose.] '
     points: 0
-  - answer: bad
+  - answer: ' [Give her a nuclear warhead.]'
+    points: 1
+  - answer: '[Give her an airplane ticket to USA.] '
     points: -1

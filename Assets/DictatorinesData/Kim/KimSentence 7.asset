@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e513beaa93330c441907f5de8fd39c40, type: 3}
-  m_Name: KimSentence6
+  m_Name: KimSentence 7
   m_EditorClassIdentifier: 
-  description: Loyalty to the regime is non-negotiable. It ensures the stability
-    and strength of our great nation.
+  description: '[She looks playful and starts acting] "Greetings, citizen. I am the
+    Supreme Leader. What brings you to my presence?'
   answers:
-  - answer: Loyalty is crucial, but how do you foster a sense of unity among the
-      citizens?
-    points: 0
-  - answer: sn't blind loyalty dangerous? Shouldn't people have the right to question
-      authority?
+  - answer: mmmm, kinky
     points: -1
-  - answer: I agree about the significance of loyalty.
+  - answer: Supreme Leader, isn't it true that your actions have caused suffering
+      among your people?
+    points: -1
+  - answer: Your leadership is truly inspiring. How may I contribute to the prosperity
+      of our nation?
     points: 1

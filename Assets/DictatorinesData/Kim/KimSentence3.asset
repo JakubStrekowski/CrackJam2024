@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e513beaa93330c441907f5de8fd39c40, type: 3}
   m_Name: KimSentence3
   m_EditorClassIdentifier: 
-  description: test
+  description: What is your favourite dessert?
   answers:
-  - answer: good
+  - answer: Whatever you cook for me
     points: 1
-  - answer: neutral
-    points: 0
-  - answer: bad
+  - answer: 'Hamburger  '
     points: -1
+  - answer: Sushi
+    points: 0

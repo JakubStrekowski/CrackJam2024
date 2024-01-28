@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e513beaa93330c441907f5de8fd39c40, type: 3}
+  m_Name: KimSentence 9
+  m_EditorClassIdentifier: 
+  description: Our nuclear capabilities are a symbol of our strength and a deterrent
+    to those who oppose us.
+  answers:
+  - answer: Nuclear capabilities are a delicate topic. How about balancing deterrence
+      with global diplomacy?
+    points: 0
+  - answer: I cannot oppose your nuclear ass
+    points: 1
+  - answer: "Don\u2019t you think that the constant focus on nuclear power isolates
+      our nation from the international community?"
+    points: -1

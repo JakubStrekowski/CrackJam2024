@@ -16780,7 +16780,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1639396519}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.61, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17242,6 +17242,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ba4f2cddcbd5b594ea5eed8948008bc0, type: 2}
   happyParticles: {fileID: 794900765}
   sadParticles: {fileID: 1103393163}
+  clickParticles: {fileID: 1639396521}
   backToMenuBtn: {fileID: 1450158747}
   gameplayPanel: {fileID: 1857543070}
   resultPanel: {fileID: 1934720036}
