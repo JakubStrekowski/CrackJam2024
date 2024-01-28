@@ -6,9 +6,16 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using DG.Tweening;
+using Random = UnityEngine.Random;
 
+[RequireComponent(typeof(AudioSource))]
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private AudioClip[] characterMusic;
+    [SerializeField] private AudioSource audioSource;
+
+    private AudioSource clickSoundSrc;
+    
     [SerializeField] private GameObject successDictatorRepresentation; 
     [SerializeField] private Image dictatorRepresentation; 
     [SerializeField] private Image backgroundRepresentation; 
@@ -45,9 +52,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Ease ease;
     [SerializeField] private Ease easeOut;
 
+    [Header("Audio")] 
+    [SerializeField] private AudioClip[] clicksSounds;
+    
     private void Start()
     {
         _rect = dictatorRepresentation.gameObject.GetComponent<RectTransform>();
+        clickSoundSrc = GetComponent<AudioSource>();
         
         PlayerPrefs.SetInt("Agreed",2137);
         gameplayPanel.SetActive(true);
@@ -67,6 +78,12 @@ public class GameManager : MonoBehaviour
         {
             StartCoroutine(nameof(StalineczkaAnimController));
         }
+
+        if (characterMusic.Length > 0)
+        {
+            audioSource.clip = characterMusic[currentDictator];
+        }
+        audioSource.Play();
     }
 
     private void Update()
@@ -92,6 +109,11 @@ public class GameManager : MonoBehaviour
 
     public void SelectDialogOption(int id)
     {
+        if (clickSoundSrc != null)
+        {
+            int i = Random.Range(0, clicksSounds.Length);
+            clickSoundSrc.PlayOneShot(clicksSounds[i]);
+        }
         id = Mathf.Clamp(id, 0, currentSentence.GetAnswersCount()-1);
 
         int points = currentSentence.GetSentence(id).GetAnswetValue();
