@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
     [Space]
     [SerializeField] private TextMeshProUGUI resultOutput;
 
+
     private Sequence _seq;
     private RectTransform _rect;
     [SerializeField] private Ease ease;
@@ -70,6 +71,8 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        Vector3 newPos = Input.mousePosition;
+
         if (Input.GetMouseButtonDown(0))
         {
             Vector3 poz = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -78,7 +81,7 @@ public class GameManager : MonoBehaviour
             clickParticles.Play();
         }
     }
-
+    
     void HideButtons(bool hide)
     {
         for (int i = 0; i < dialogButtons.Length; i++)
