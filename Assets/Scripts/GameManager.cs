@@ -213,6 +213,10 @@ public class GameManager : MonoBehaviour
                 break;
             case MeetingResult.Bad:
                 resultOutput.SetText("Run, NOW!");
+                dictatorRepresentation.gameObject.SetActive(false);
+                successDictatorRepresentation.SetActive(true);
+                successDictatorRepresentation.GetComponent<DictatorSuccess>()
+                    .SetDictatorFailure(dictators[currentDictator]);
                 break;
             default:
                 resultOutput.SetText("How did we got here?");
