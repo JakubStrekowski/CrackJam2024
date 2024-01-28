@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e513beaa93330c441907f5de8fd39c40, type: 3}
-  m_Name: Janina 0
+  m_Name: Janina 9
   m_EditorClassIdentifier: 
-  description: '[Janina moves hand closer to yours...]'
+  description: What do you think about me?
   answers:
-  - answer: 'No! Go away! '
+  - answer: "You\u2019re ok."
+    points: 0
+  - answer: '[Do Fortnite dance]'
     points: -1
-  - answer: '[Hold her hand]'
-    points: 1
-  - answer: "No! Not before marriage\u2026!"
+  - answer: I really like your companionship.
     points: 1

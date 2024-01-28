@@ -21,10 +21,22 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9056244707c081c4eb071f48e3ad48bf, type: 2}
   - {fileID: 11400000, guid: cc74c12cac65b104895df56e9520148e, type: 2}
   - {fileID: 11400000, guid: 27e54ef9028f53946b6b7dc1d58111fc, type: 2}
-  skinStates: []
+  - {fileID: 11400000, guid: 2e449509245198f4a80c270a16a45516, type: 2}
+  - {fileID: 11400000, guid: cca34bc8471bcc047a9fb7a412c81c05, type: 2}
+  - {fileID: 11400000, guid: fe8d64201433f3c49b6b6b011f738bd1, type: 2}
+  - {fileID: 11400000, guid: 39cb2d82517963c47be99571ca92f0ef, type: 2}
+  - {fileID: 11400000, guid: 4d89bbfe87aeed44fa060969ad9689d7, type: 2}
+  - {fileID: 11400000, guid: d3bb24b12a2503347842c7f5df67a7fc, type: 2}
+  - {fileID: 11400000, guid: 55e5abb93f6d3114c826c15983a2648c, type: 2}
+  skinStates:
+  - {fileID: 21300000, guid: d89617cef711d794d9a7667f2dde0b02, type: 3}
+  - {fileID: 21300000, guid: 01c84c57e0c74be4187217cb35731d85, type: 3}
+  - {fileID: 21300000, guid: 93fe8babfe99bff4286ef075c6aaed52, type: 3}
   stalineczkaNeutral: []
   stalineczkaAngri: []
   stalineczkaAnimState: 0
   stalineczkaSpriteId: 0
-  successSkin: []
+  successSkin:
+  - {fileID: 21300000, guid: f60f24ff26c9ffa42ae9b65b9a571fb2, type: 3}
+  - {fileID: 21300000, guid: 42d09ca2bb9373e46add7874a964770a, type: 3}
   successSkinId: 0

@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: Anon-senpai, I feel the urge to sing praises to the Lord
   answers:
-  - answer: '*whisper to her ear* Fuck satan, that little whiny b*tch'
+  - answer: 'Maybe we should just pray together? '
+    points: 0
+  - answer: '[Start singing "Barka."]'
     points: 1
-  - answer: '*whisper to her ear* Ooooo Panieee ....'
-    points: 1
-  - answer: "*whisper to her ear* Winogrona czerwone luz 4.99z\u0142"
+  - answer: "Last Christmas- I gave you my heart\u2026!"
     points: -1

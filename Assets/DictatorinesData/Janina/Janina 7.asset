@@ -10,13 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e513beaa93330c441907f5de8fd39c40, type: 3}
-  m_Name: Janina 0
+  m_Name: Janina 7
   m_EditorClassIdentifier: 
-  description: '[Janina moves hand closer to yours...]'
+  description: '[Janina starts singing a prayer] "Prayer is our connection to Divinity.
+    Would you like to join?'
   answers:
-  - answer: 'No! Go away! '
+  - answer: That's beautiful. I'll think about it.
+    points: 0
+  - answer: Yes, I'd love to join. Maybe communal prayer will bring us closer.
+    points: 1
+  - answer: Not for me, these religious fantasies. How can you believe in something
+      you can't see?
     points: -1
-  - answer: '[Hold her hand]'
-    points: 1
-  - answer: "No! Not before marriage\u2026!"
-    points: 1
