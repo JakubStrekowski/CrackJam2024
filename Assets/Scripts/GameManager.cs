@@ -225,9 +225,12 @@ public class GameManager : MonoBehaviour
                 successDictatorRepresentation.GetComponent<DictatorSuccess>()
                     .SetDictatorFailure(dictators[currentDictator]);
 
-                if (dictators[currentDictator].backgroundAnimationAtEnd.Length > 0)
+                if (dictators[currentDictator].backgroundAnimationAtEnd != null)
                 {
-                    StartCoroutine(EndingBackgroundAnimation());
+                    if (dictators[currentDictator].backgroundAnimationAtEnd.Length > 0)
+                    {
+                        StartCoroutine(EndingBackgroundAnimation());
+                    }
                 }
 
                 break;
