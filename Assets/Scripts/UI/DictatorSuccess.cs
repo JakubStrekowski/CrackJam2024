@@ -22,8 +22,14 @@ public class DictatorSuccess : MonoBehaviour
         if (currantDictator.name == "KimDictator" || currantDictator.name == "Janina Pawelska")
         {
             GetComponent<BreatheEffect>().targetScale = new Vector3(0.71f, 0.725f, 0.7f);
-            GetComponent<BreatheEffect>().RecalculateSequence();
+            GetComponent<BreatheEffect>().RecalculateSequence(new Vector3(0.7f, 0.7f, 0.7f));
             transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
+        }
+        if (currantDictator.name == "Janina Pawelska")
+        {
+            GetComponent<BreatheEffect>().targetScale = new Vector3(1.35f, 1.375f, 1.35f);
+            GetComponent<BreatheEffect>().RecalculateSequence(new Vector3(1.35f, 1.35f, 1.35f));
+            transform.localScale = new Vector3(1.35f, 1.35f, 1.35f);
         }
         
     }
@@ -56,7 +62,7 @@ public class DictatorSuccess : MonoBehaviour
         if (currantDictator.name == "KimDictator" || currantDictator.name == "Janina Pawelska" || currantDictator.name == "AdaHitlerina")
         {
             GetComponent<BreatheEffect>().targetScale = new Vector3(0.71f, 0.725f, 0.7f);
-            GetComponent<BreatheEffect>().RecalculateSequence();
+            GetComponent<BreatheEffect>().RecalculateSequence(new Vector3(0.7f, 0.7f, 0.7f));
             transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
         }
     }
