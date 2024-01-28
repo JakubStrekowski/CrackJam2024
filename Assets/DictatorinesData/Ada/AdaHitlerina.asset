@@ -38,4 +38,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 52e515535b31f7744b9fb2c9dcd0fce0, type: 3}
   - {fileID: 21300000, guid: 3755f93c0a355e247b44b9eff4d25197, type: 3}
   - {fileID: 21300000, guid: f0bb80361d1d76141ac51e757ae17e86, type: 3}
-  successSkinId: 2
+  successSkinId: 3
+  failureSkin:
+  - {fileID: 21300000, guid: 64dc866aa1948d24b840c27f284ac36d, type: 3}
+  failureSkinId: 0

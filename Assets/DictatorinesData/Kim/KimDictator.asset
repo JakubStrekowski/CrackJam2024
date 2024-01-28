@@ -39,3 +39,11 @@ MonoBehaviour:
   successSkin:
   - {fileID: 21300000, guid: a086e77ec67e0b749a1022fcef5f7c9a, type: 3}
   successSkinId: 0
+  failureSkin:
+  - {fileID: 21300000, guid: 831db63c5efc25847bf0f6b2c1e5c012, type: 3}
+  - {fileID: 21300000, guid: 641741a63cc1f5a4b8af54ed59dd5b37, type: 3}
+  - {fileID: 21300000, guid: c4e6f30faf2734e4984df2ac60b12335, type: 3}
+  - {fileID: 21300000, guid: e3530928f1daa464bac881836efb2925, type: 3}
+  - {fileID: 21300000, guid: 130f755df5fe41e44819ac464d5fa07e, type: 3}
+  - {fileID: 21300000, guid: 4b4055b375737574d86fbe5dfa21c725, type: 3}
+  failureSkinId: 5
