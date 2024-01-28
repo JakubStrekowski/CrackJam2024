@@ -29,6 +29,9 @@ public class DictatorChan : ScriptableObject
     
     public Sprite[] successSkin;
     public int successSkinId;
+    
+    public Sprite[] failureSkin;
+    public int failureSkinId;
 
     private List<Sentence> sentencesBuffer = new List<Sentence>();
 

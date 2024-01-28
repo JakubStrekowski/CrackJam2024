@@ -40,4 +40,52 @@ public class DictatorSuccess : MonoBehaviour
             yield return new WaitForSeconds(0.25f);
         }
     }
+    
+    public void SetDictatorFailure(DictatorChan currantDictator)
+    {
+        currentDictator = currantDictator;
+        if (currantDictator.name == "KimDictator")
+        {
+            StartCoroutine(nameof(KimFailureSkinController));
+        }
+        else
+        {
+            StartCoroutine(nameof(CharacterFailureSkinController));
+        }
+
+        if (currantDictator.name == "KimDictator" || currantDictator.name == "Janina Pawelska" || currantDictator.name == "AdaHitlerina")
+        {
+            GetComponent<BreatheEffect>().targetScale = new Vector3(0.71f, 0.725f, 0.7f);
+            GetComponent<BreatheEffect>().RecalculateSequence();
+            transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
+        }
+    }
+    
+    private IEnumerator CharacterFailureSkinController()
+    {
+        while (true)
+        {
+            currentDictator.failureSkinId = (currentDictator.failureSkinId + 1) % currentDictator.failureSkin.Length;
+                
+            _image.sprite = currentDictator
+                .failureSkin[currentDictator.failureSkinId];
+
+            yield return new WaitForSeconds(0.25f);
+        }
+    }
+    
+    private IEnumerator KimFailureSkinController()
+    {
+        currentDictator.failureSkinId = -1;
+        
+        while (currentDictator.failureSkinId < currentDictator.failureSkin.Length - 1)
+        {
+            currentDictator.failureSkinId = (currentDictator.failureSkinId + 1);
+                
+            _image.sprite = currentDictator
+                .failureSkin[currentDictator.failureSkinId];
+
+            yield return new WaitForSeconds(0.25f);
+        }
+    }
 }
