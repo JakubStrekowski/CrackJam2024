@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e513beaa93330c441907f5de8fd39c40, type: 3}
-  m_Name: Janina 2
+  m_Name: Janina 4
   m_EditorClassIdentifier: 
-  description: Oh no! It is already 21:37! I have to go
+  description: Anon-senpai, I feel the urge to sing praises to the Lord
   answers:
-  - answer: Go to where? Church? LOL
-    points: -1
-  - answer: '[Start laughting loudly while singing "barka" wykop remix]'
+  - answer: '*whisper to her ear* Fuck satan, that little whiny b*tch'
     points: 1
-  - answer: Uhmm, ok. Thanks for the meeting!
-    points: 0
+  - answer: '*whisper to her ear* Ooooo Panieee ....'
+    points: 1
+  - answer: "*whisper to her ear* Winogrona czerwone luz 4.99z\u0142"
+    points: -1

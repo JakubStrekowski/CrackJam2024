@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e513beaa93330c441907f5de8fd39c40, type: 3}
   m_Name: Janina 1
   m_EditorClassIdentifier: 
-  description: TEST
+  description: What is your favourite dessert?
   answers:
-  - answer: 1
-    points: 1
-  - answer: 0
+  - answer: Cheescake
     points: 0
-  - answer: -1
+  - answer: Your cake sweetie ;)
     points: -1
+  - answer: Kremowka
+    points: 1

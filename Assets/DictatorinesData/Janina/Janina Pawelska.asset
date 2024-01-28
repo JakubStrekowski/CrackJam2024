@@ -20,3 +20,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 85071733e6b39744497487756fe579a9, type: 2}
   - {fileID: 11400000, guid: 9056244707c081c4eb071f48e3ad48bf, type: 2}
   - {fileID: 11400000, guid: cc74c12cac65b104895df56e9520148e, type: 2}
+  - {fileID: 11400000, guid: 27e54ef9028f53946b6b7dc1d58111fc, type: 2}
+  skinStates: []
+  stalineczkaNeutral: []
+  stalineczkaAngri: []
+  stalineczkaAnimState: 0
+  stalineczkaSpriteId: 0
+  successSkin: []
+  successSkinId: 0

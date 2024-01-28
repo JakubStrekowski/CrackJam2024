@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e513beaa93330c441907f5de8fd39c40, type: 3}
-  m_Name: Janina 2
+  m_Name: StalSentence 7
   m_EditorClassIdentifier: 
-  description: Oh no! It is already 21:37! I have to go
+  description: '[Stalineczka looks at you without saying anything, and lightly touching
+    your lap]'
   answers:
-  - answer: Go to where? Church? LOL
-    points: -1
-  - answer: '[Start laughting loudly while singing "barka" wykop remix]'
-    points: 1
-  - answer: Uhmm, ok. Thanks for the meeting!
+  - answer: '[Start quoting Stalin]'
     points: 0
+  - answer: Call the Bolsheviks because I've got quite a revolution in my pants
+    points: 1
+  - answer: '[Stare back in silence]'
+    points: -1

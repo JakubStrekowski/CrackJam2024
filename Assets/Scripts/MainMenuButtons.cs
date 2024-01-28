@@ -24,10 +24,8 @@ public class MainMenuButtons : MonoBehaviour
     private void Start()
     {
         volumeSlider.value = PlayerPrefs.GetFloat("MusicVolume", 0.75f);
-        bool b = PlayerPrefs.GetInt("Agreed") >= (int)(5);
-        adultPromt.gameObject.SetActive(!b);
-        Debug.Log(PlayerPrefs.GetInt("Agreed"));
-        Debug.Log(b);
+        //bool b = PlayerPrefs.GetInt("Agreed") >= (int)(5);
+        adultPromt.gameObject.SetActive(true);
     }
 
     public void StartGame()
