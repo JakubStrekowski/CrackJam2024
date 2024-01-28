@@ -81,9 +81,14 @@ public class DictatorSuccess : MonoBehaviour
         while (currentDictator.failureSkinId < currentDictator.failureSkin.Length - 1)
         {
             currentDictator.failureSkinId = (currentDictator.failureSkinId + 1);
-                
+
             _image.sprite = currentDictator
                 .failureSkin[currentDictator.failureSkinId];
+            
+            if (currentDictator.failureSkinId == 0)
+            {
+                yield return new WaitForSeconds(0.5f);
+            }
 
             yield return new WaitForSeconds(0.25f);
         }
