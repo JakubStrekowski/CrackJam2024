@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
 
         HideButtons(false);
         LoadNewDictator(globalSettings.choosenWaifu);
-        winCap = lovePoints + dictators[currentDictator].GetTotalScore() - 1;
+        winCap = lovePoints + dictators[currentDictator].GetTotalScore() - dictators[currentDictator].GetTotalScore() / 4;
 
         if (dictators[currentDictator].name == "StalineczkaDictator")
         {
@@ -203,14 +203,17 @@ public class GameManager : MonoBehaviour
         switch (result)
         {
             case MeetingResult.Good:
-                resultOutput.SetText("Great job soldier o7");
-                dictatorRepresentation.gameObject.SetActive(false);
-                successDictatorRepresentation.SetActive(true);
-                successDictatorRepresentation.GetComponent<DictatorSuccess>()
-                    .SetDictatorSuccess(dictators[currentDictator]);
+                SuccessAction();
                 break;
             case MeetingResult.Neutral:
-                resultOutput.SetText("Meh, go back to playing games");
+                if (lovePoints > 0.75f * winCap)
+                {
+                    SuccessAction();
+                }
+                else
+                {
+                    resultOutput.SetText("\"It's getting late, how about we meet another time? ;)\"");
+                }
                 break;
             case MeetingResult.Bad:
                 resultOutput.SetText("Run, NOW!");
@@ -223,6 +226,15 @@ public class GameManager : MonoBehaviour
                 resultOutput.SetText("How did we got here?");
                 break;
         }
+    }
+
+    private void SuccessAction()
+    {
+        resultOutput.SetText("\"I had a great time with you~! :3 How about we take it a bit further...? ;) Mmmm... <333\"");
+        dictatorRepresentation.gameObject.SetActive(false);
+        successDictatorRepresentation.SetActive(true);
+        successDictatorRepresentation.GetComponent<DictatorSuccess>()
+            .SetDictatorSuccess(dictators[currentDictator]);
     }
 
     private IEnumerator WriteoutSentence(string sentence, TextMeshProUGUI output)
