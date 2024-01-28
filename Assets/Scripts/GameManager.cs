@@ -72,8 +72,9 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log(Input.mousePosition);
-            clickParticles.transform.position = Input.mousePosition;
+            Vector3 poz = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            poz.z = 0;
+            clickParticles.transform.position = poz;
             clickParticles.Play();
         }
     }
